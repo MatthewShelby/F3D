@@ -1,6 +1,6 @@
 import './style.css';
-import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r99/three.min.js';
+import { OrbitControls } from 'https://cdnjs.cloudflare.com/ajax/libs/three.js//examples/jsm/controls/OrbitControls';
 
 
 //#region Init SCENE
