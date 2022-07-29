@@ -55,24 +55,31 @@ WallTexture.repeat.set(4, 4);
 const WallMaterial = new THREE.MeshBasicMaterial({ map: WallTexture });
 
 //#region Wall 1
-const geometryW1 = new THREE.BoxGeometry(0.3, 3, 30);
+const geometryW1 = new THREE.BoxGeometry(1, 3, 40);
+//geometryW1.positions.set(20, 1, 15);
+
 const WallBox1 = new THREE.Mesh(geometryW1, WallMaterial);
-WallBox1.position.set(0, 4, 30);
+
+WallBox1.position.x += 50;
+
 scene.add(WallBox1);
+
 //#endregion
 
-//#region Wall 2
-const geometryW2 = new THREE.BoxGeometry(40, 1, 30);
-const WallBox2 = new THREE.Mesh(geometryW2, WallMaterial);
-WallBox1.position.set(20, 0.5, 15);
-scene.add(WallBox2);
+//#region Wall 2.
+
+// const geometryW2 = new THREE.BoxGeometry(40, 1, 30);
+// const WallBox2 = new THREE.Mesh(geometryW2, WallMaterial);
+// WallBox1.position.set(20, 0.5, 15);
+// scene.add(WallBox2);
 //#endregion
 
 //#region Wall 3
-const geometryW3 = new THREE.BoxGeometry(40, 1, 30);
-const WallBox3 = new THREE.Mesh(geometryW3, WallMaterial);
-WallBox1.position.set(20, 0.5, 15);
-scene.add(WallBox3);
+
+// const geometryW3 = new THREE.BoxGeometry(40, 1, 30);
+// const WallBox3 = new THREE.Mesh(geometryW3, WallMaterial);
+// WallBox1.position.set(20, 0.5, 15);
+// scene.add(WallBox3);
 //#endregion
 
 //#endregion
