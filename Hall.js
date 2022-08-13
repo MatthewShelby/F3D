@@ -315,12 +315,13 @@ glftLoader6.load('./Objects/Boothes/Irancell Booth/Irancell Booth.gltf', (gltfSc
 // });
 const glftLoader9 = new GLTFLoader();
 var body1;
+var hasBody1 = false;
 glftLoader9.load('./Objects/Body/yuki/scene.gltf', function (gltf) {
       body1 = gltf.scene;
       body1.position.set(22, 1.41, 4.5);
       body1.scale.set(0.4, 0.4, 0.4);
       scene.add(body1);
-
+      hasBody1 = true;
 
 });
 
@@ -363,7 +364,10 @@ function animate() {
       //torus.rotation.y += 0.006;
       // cube.rotation.y += 0.002;
       // cube.rotation.x += 0.0001;*/
-      body1.rotation.y += 0.004;
+      if (hasBody1) {
+            body1.rotation.y += 0.004;
+
+      }
 
       if (!gr) {
             //camera.lookAt(12, 2, 1, 1)
