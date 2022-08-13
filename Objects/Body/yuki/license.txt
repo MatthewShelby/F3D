@@ -1,0 +1,11 @@
+Model Information:
+* title:	Yuki
+* source:	https://sketchfab.com/3d-models/yuki-af0e8139e8f542ad842b4ddbf0bdec8b
+* author:	Stan (https://sketchfab.com/Stas_SayHallo)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Yuki" (https://sketchfab.com/3d-models/yuki-af0e8139e8f542ad842b4ddbf0bdec8b) by Stan (https://sketchfab.com/Stas_SayHallo) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
