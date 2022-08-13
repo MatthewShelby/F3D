@@ -10,7 +10,7 @@ import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.121.1/examples/
 // import * as THREE from 'three';
 // import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 // import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-
+// 
 
 //import { OrbitControls } from 'https://unpkg.com/three@<0.121.1>/examples/jsm/controls/OrbitControls.js';
 
