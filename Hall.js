@@ -6,7 +6,7 @@
 import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.module.js';
 import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.121.1/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.121.1/examples/jsm/loaders/GLTFLoader.js';
-
+// import { DRACOLoader } from 'https://cdn.jsdelivr.net/npm/three@0.121.1/examples/jsm/loaders/DRACOLoader.js';
 // import * as THREE from 'three';
 // import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 // import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
@@ -30,7 +30,8 @@ document.body.appendChild(renderer.domElement);
 //camera.position.z = 30;
 
 
-camera.position.set(12, 3, 25);
+camera.position.set(10, 3, 12);
+// camera.position.set(12, 3, 25);
 //camera.up.set(0, 0, 0); 
 //camera.lookAt(20, 2, 0);
 
@@ -162,8 +163,16 @@ glftLoader.load('./Objects/furnitures/chair2.gltf', (gltfScene) => {
 const pointLight = new THREE.PointLight(0xffffff);
 pointLight.position.set(14, 4, 11);
 //scene.add(pointLight)
-const spotLight = new THREE.PointLight(0xffffff);
-spotLight.position.set(13, 2, 11);
+const geometryN = new THREE.BoxGeometry(0.1, 0.1, 0.1);
+const materialN = new THREE.MeshBasicMaterial({ color: 0xeb4034 });
+const cubeN = new THREE.Mesh(geometryN, materialN);
+//cube.position.set(5, 3.5, 3);
+cubeN.position.set(22, 3.3, 4.5);
+//scene.add(cubeN);
+
+const spotLight = new THREE.PointLight(0xffffff, 0.4);
+spotLight.position.set(22, 3.2, 4.5);
+addLight2(22.3, 3.1, 4.5);
 
 spotLight.castShadow = true;
 
@@ -174,7 +183,7 @@ spotLight.shadow.camera.near = 500;
 spotLight.shadow.camera.far = 4000;
 spotLight.shadow.camera.fov = 30;
 
-//scene.add(spotLight);
+scene.add(spotLight);
 
 
 const glftLoader2 = new GLTFLoader();
@@ -206,9 +215,7 @@ glftLoader3.load('./Objects/furnitures/Tables/Table1/Table1.gltf', (gltfScene) =
       gltfScene.scene.position.set(12, 1.01, 11);
       gltfScene.scene.scale.set(10, 10, 10);
       console.info(gltfScene.scene.children);
-
       scene.add(gltfScene.scene);
-
 });
 
 //#endregion
@@ -295,7 +302,43 @@ glftLoader6.load('./Objects/Boothes/Irancell Booth/Irancell Booth.gltf', (gltfSc
 
 //#endregion
 
+//#region Hologram
+// const glftLoader7 = new GLTFLoader();
+// var body0;
+// glftLoader7.load('./Objects/Body/google poly.gltf', function (gltf) {
+//       body0 = gltf.scene;
+//       body0.position.set(25.1, 1.31, 3.5);
+//       body0.scale.set(0.7, 0.7, 0.7);
+//       scene.add(body0);
 
+
+// });
+const glftLoader9 = new GLTFLoader();
+var body1;
+glftLoader9.load('./Objects/Body/yuki/scene.gltf', function (gltf) {
+      body1 = gltf.scene;
+      body1.position.set(22, 1.41, 4.5);
+      body1.scale.set(0.4, 0.4, 0.4);
+      scene.add(body1);
+
+
+});
+
+
+
+
+
+
+
+
+const glftLoader8 = new GLTFLoader();
+glftLoader8.load('./Objects/Boothes/Hologram/Hologram.gltf', (gltfScene) => {
+      gltfScene.scene.position.set(22, 1.01, 4.5);
+      gltfScene.scene.scale.set(9, 9, 9);
+      scene.add(gltfScene.scene);
+});
+
+//#endregion
 
 
 
@@ -314,50 +357,17 @@ sphere.position.set(12, 3, 10);
 var gr = false;
 function animate() {
       requestAnimationFrame(animate);
+
       /*
-            if (spotLight.position.x == 12) {
-                  spotLight.position.x += 0.006;
-                  gr = true;
-            }
-            if (spotLight.position.x > 12 && gr) {
-                  spotLight.position.x += 0.006;
-            }
-            if (spotLight.position.x < 17 && !gr) {
-                  spotLight.position.x -= 0.006;
-            }
-            if (spotLight.position.x < 12) {
-                  spotLight.position.x += 0.008;
-                  gr = true;
-            }
-            if (spotLight.position.x > 17 && gr) {
-                  spotLight.position.x -= 0.008;
-                  gr = false;
-            }
-      
-            if (sphere.position.x == 12) {
-                  sphere.position.x += 0.006;
-                  gr = true;
-            }
-            if (sphere.position.x > 12 && gr) {
-                  sphere.position.x += 0.006;
-            }
-            if (sphere.position.x < 17 && !gr) {
-                  sphere.position.x -= 0.006;
-            }
-            if (sphere.position.x < 12) {
-                  sphere.position.x += 0.008;
-                  gr = true;
-            }
-            if (sphere.position.x > 17 && gr) {
-                  sphere.position.x -= 0.008;
-                  gr = false;
-            }*/
       //torus.rotation.x += 0.006;
       //torus.rotation.y += 0.006;
       // cube.rotation.y += 0.002;
-      // cube.rotation.x += 0.0001;
+      // cube.rotation.x += 0.0001;*/
+      body1.rotation.y += 0.004;
+
       if (!gr) {
             //camera.lookAt(12, 2, 1, 1)
+            body1.rotation.y += 0.024;
             gr = true;
       }
       renderer.render(scene, camera);
@@ -365,3 +375,42 @@ function animate() {
 
 
 animate();
+/*
+if (spotLight.position.x == 12) {
+      spotLight.position.x += 0.006;
+      gr = true;
+}
+if (spotLight.position.x > 12 && gr) {
+      spotLight.position.x += 0.006;
+}
+if (spotLight.position.x < 17 && !gr) {
+      spotLight.position.x -= 0.006;
+}
+if (spotLight.position.x < 12) {
+      spotLight.position.x += 0.008;
+      gr = true;
+}
+if (spotLight.position.x > 17 && gr) {
+      spotLight.position.x -= 0.008;
+      gr = false;
+}
+
+if (sphere.position.x == 12) {
+      sphere.position.x += 0.006;
+      gr = true;
+}
+if (sphere.position.x > 12 && gr) {
+      sphere.position.x += 0.006;
+}
+if (sphere.position.x < 17 && !gr) {
+      sphere.position.x -= 0.006;
+}
+if (sphere.position.x < 12) {
+      sphere.position.x += 0.008;
+      gr = true;
+}
+if (sphere.position.x > 17 && gr) {
+      sphere.position.x -= 0.008;
+      gr = false;
+}
+*/
